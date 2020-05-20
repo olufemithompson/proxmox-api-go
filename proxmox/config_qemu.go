@@ -93,7 +93,7 @@ func (config ConfigQemu) CreateVm(vmr *VmRef, client *Client) (err error) {
 		"sockets":     config.QemuSockets,
 		"cores":       config.QemuCores,
 		"cpu":         config.QemuCpu,
-                "kvm":         "no",
+                "kvm":         false,
 		"numa":        config.QemuNuma,
 		"hotplug":     config.Hotplug,
 		"memory":      config.Memory,
