@@ -37,7 +37,7 @@ type ConfigQemu struct {
 	QemuSockets  int         `json:"sockets"`
 	QemuVcpus    int         `json:"vcpus"`
 	QemuCpu      string      `json:"cpu"`
-        kvm          bool        `json:"kvm"`
+        Kvm          bool        `json:"kvm"`
 	QemuNuma     bool        `json:"numa"`
 	Hotplug      string      `json:"hotplug"`
 	QemuIso      string      `json:"iso"`
@@ -94,7 +94,7 @@ func (config ConfigQemu) CreateVm(vmr *VmRef, client *Client) (err error) {
 		"sockets":     config.QemuSockets,
 		"cores":       config.QemuCores,
 		"cpu":         config.QemuCpu,
-                "kvm":         config.kvm,
+                "kvm":         config.Kvm,
 		"numa":        config.QemuNuma,
 		"hotplug":     config.Hotplug,
 		"memory":      config.Memory,
@@ -216,6 +216,7 @@ func (config ConfigQemu) UpdateConfig(vmr *VmRef, client *Client) (err error) {
 		"cores":       config.QemuCores,
 		"cpu":         config.QemuCpu,
 		"numa":        config.QemuNuma,
+                "kvm":         config.Kvm,
 		"hotplug":     config.Hotplug,
 		"memory":      config.Memory,
 		"boot":        config.Boot,
@@ -475,7 +476,7 @@ func NewConfigQemuFromApi(vmr *VmRef, client *Client) (config *ConfigQemu, err e
 		QemuCores:    int(cores),
 		QemuSockets:  int(sockets),
 		QemuCpu:      cpu, 
-                kvm:          kvm,
+                Kvm:          kvm,
 		QemuNuma:     numa,
 		Hotplug:      hotplug,
 		QemuVlanTag:  -1,
