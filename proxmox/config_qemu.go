@@ -433,6 +433,10 @@ func NewConfigQemuFromApi(vmr *VmRef, client *Client) (config *ConfigQemu, err e
 	if _, isSet := vmConfig["cpu"]; isSet {
 		cpu = vmConfig["cpu"].(string)
 	}
+        kvm := false
+	if _, isSet := vmConfig["kvm"]; isSet {
+		numa = Itob(int(vmConfig["kvm"].(float64)))
+	}
 	numa := false
 	if _, isSet := vmConfig["numa"]; isSet {
 		numa = Itob(int(vmConfig["numa"].(float64)))
