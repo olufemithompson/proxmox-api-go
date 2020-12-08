@@ -1,4 +1,4 @@
-module github.com/Telmate/proxmox-api-go
+module github.com/olufemithompson/proxmox-api-go-fork
 
 go 1.14
 
