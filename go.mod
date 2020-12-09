@@ -1,4 +1,4 @@
-module github.com/olufemithompson/proxmox-api-go-fork
+module github.com/olufemithompson/proxmox-api-go
 
 go 1.14
 

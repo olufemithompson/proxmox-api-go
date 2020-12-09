@@ -8,7 +8,7 @@ import (
 	"log"
 	"os"
 	"strconv"
-	"github.com/olufemithompson/proxmox-api-go-fork/proxmox"
+	"github.com/olufemithompson/proxmox-api-go/proxmox"
 )
 
 func main() {
